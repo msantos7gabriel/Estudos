@@ -1,3 +1,6 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+def index(request):
+    """Página Principal do Learn_Log"""
+    return render(request, 'learn_logs/index.html')
