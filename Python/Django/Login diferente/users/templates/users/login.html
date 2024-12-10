@@ -1,7 +1,7 @@
 {% extends 'learn_logs/base.html' %}
 
 {% block content %}
-  {% if form.errors %}
+  {% if error %}
     <p>Seu Login e Senha estão incorretos. Por favor, tente novamente</p>
   {% endif %}
   <form action="{% url 'login' %}" method="post">
