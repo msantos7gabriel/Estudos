@@ -2,7 +2,8 @@
   <a href="{% url 'index' %}">Learn Logs</a> -
   <a href="{% url 'topics' %}">Tópicos</a>
   {% if user.is_authenticated %}
-    Olá, {{ user.name }}
+    Olá, {{ user.username }}
+    <a href="{% url 'logout' %}">sair</a>
   {% else %}
     <a href="{% url 'login' %}">Entrar</a>
   {% endif %}
