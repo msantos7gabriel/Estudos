@@ -28,19 +28,19 @@ def abrir_browser():
     py.write(browser)
     sleep(1)
     py.press('enter')
-    sleep(6)
+    sleep(3)
 
 
 def votar():
     # Abrir nova aba anonima
-    sleep(1)
+    sleep(0.5)
     py.hotkey('ctrl', 'shift', 'n')
     sleep(0.5)
     # botar a url para o voto
     py.write('https://pollie.app/xa7tf')
     py.press('enter')
     # carregando a pagina
-    sleep(4.5)
+    sleep(3.5)
     # clicar no botão de concordar com os cookies
     py.click(res_conversorx(900), res_conversory(925))
     # Escreve o nome
@@ -49,10 +49,10 @@ def votar():
     nome = tabelas()
     py.write(nome)
     py.press('enter')
-    sleep(2)
+    sleep(3)
     # Clica no botão de votar
     py.click(res_conversorx(1800), res_conversory(1020))
-    sleep(0.3)
+    sleep(0.5)
     # Fecha a aba
     py.hotkey('ctrl', 'w')
 
