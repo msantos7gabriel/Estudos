@@ -35,12 +35,12 @@ def votar():
     # Abrir nova aba anonima
     sleep(0.5)
     py.hotkey('ctrl', 'shift', 'n')
-    sleep(0.5)
+    sleep(0.4)
     # botar a url para o voto
     py.write('https://pollie.app/xa7tf')
     py.press('enter')
     # carregando a pagina
-    sleep(3.5)
+    sleep(3)
     # clicar no botão de concordar com os cookies
     py.click(res_conversorx(900), res_conversory(925))
     # Escreve o nome
@@ -49,12 +49,12 @@ def votar():
     nome = tabelas()
     py.write(nome)
     py.press('enter')
-    sleep(3)
+    sleep(2.5)
     # Clica no botão de votar
     py.click(res_conversorx(1800), res_conversory(1020))
-    sleep(0.5)
+    sleep(0.3)
     # Fecha a aba
-    py.hotkey('ctrl', 'w')
+    py.hotkey('alt', 'f4')
 
 
 def tabelas():
