@@ -1,5 +1,6 @@
 
 /Python/Django/env
 Python/Django/.vscode/settings.json
+
 *.exe
 *.json
