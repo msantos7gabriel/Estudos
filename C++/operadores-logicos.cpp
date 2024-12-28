@@ -21,3 +21,5 @@ int main()
         std::cout << "A temperatura esta ruim!";
     }
 }
+
+
