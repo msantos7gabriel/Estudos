@@ -1,11 +1,24 @@
 {% extends 'learn_logs/base.html' %}
+{% load bootstrap3 %}
+
+{% block header %}
+  <h1>Criar Conta</h1>
+{% endblock %}
 
 {% block content %}
-  <form action="{% url 'register' %}" method="post">
-    {% csrf_token %}
-    {{form.as_p}}
+  {% if form.errors %}
+    <p class="aviso-error">* O nome do usuário não deve conter caráteres especiais</p>
+    <p class="aviso-error">* A senha deve ter mais de 6 dígitos, letras, numeros, caracteres especiais e não pode conter o nome de usuário</p>
+    <p class="aviso-error">* As senhas digitadas precisam está iguais</p>
+  {% endif %}
 
-    <button name="submit">Registrar</button>
+  <form class="ul-none form" action="{% url 'register' %}" method="post">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+
+    {% buttons %}
+    <button class="btn btn-primary" name="submit">Registrar</button>
+    {% endbuttons %}
     <input type="hidden" name="next" value="{% url 'index' %}" />
   </form>
 {% endblock %}

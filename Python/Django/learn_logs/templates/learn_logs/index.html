@@ -1,5 +1,14 @@
 {% extends 'learn_logs/base.html' %}
 
+{% block header %}
+  <div class="jumbotron">
+    <h1>Acompanhe seu aprendizado.</h1>
+  </div>
+{% endblock %}
+
 {% block content %}
-  <p>Essa aplicação te ajudará a organizar seus estudos.</p>
+  {% if not user.is_authenticated %}
+    <h2><a href="{% url 'register' %}">Crie uma conta</a> para utilizar o Leaning Log e liste os Tópicos que você está aprendendo.</h2>
+  {% endif %}
+  <h2>Sempre que você aprender algo novo sobre um tópico, faça uma entrada resumindo o que você aprendeu.</h2>
 {% endblock %}

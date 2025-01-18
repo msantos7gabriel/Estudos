@@ -14,6 +14,9 @@ def logout_view(request):
 def register(request):
     """Faz o Cadastro de um novo usuário."""
 
+    if request.user.is_authenticated:
+        return HttpResponseRedirect(reverse('index'))
+
     if request.method != 'POST':
         # Exibe o formulário de cadastro em Branco
         form = UserCreationForm()
@@ -28,7 +31,7 @@ def register(request):
             authenticated_user = authenticate(
                 username=new_user.username, password=request.POST['password1'])
             login(request, authenticated_user)
-           
+
             return HttpResponseRedirect(reverse('index'))
 
     context = {'form': form}
