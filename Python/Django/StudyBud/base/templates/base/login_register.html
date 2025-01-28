@@ -1,0 +1,34 @@
+{% extends 'main.html' %}
+
+{% block content %}
+  {% comment %}Login{% endcomment %}
+  <div>
+    <form action="{% url 'login' %}" method="POST">
+      {% csrf_token %}
+
+      <label for="username">Nome de Usuário:</label>
+      <input type="text" name="username" placeholder="Enter Username" />
+
+      <label for="password">Senha:</label>
+      <input type="password" name="password" placeholder="Enter Password" />
+
+      <input type="submit" value="Login" />
+    </form>
+  </div>
+
+  {% comment %}Registrar{% endcomment %}
+
+  <div>
+    <form action="{% url 'login' %}" method="POST">
+      {% csrf_token %}
+
+      <label for="username">Nome de Usuário:</label>
+      <input type="text" name="username" placeholder="Enter Username" />
+
+      <label for="password">Senha:</label>
+      <input type="password" name="password" placeholder="Enter Password" />
+
+      <input type="submit" value="Registrar" />
+    </form>
+  </div>
+{% endblock %}
