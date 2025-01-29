@@ -5,8 +5,9 @@
 </form>
 
 {% if request.user.is_authenticated %}
+  <p>Bem Vindo {{ request.user }}</p>
   <a href="{% url 'logout' %}">Logout</a>
-{% else %}
+{% elif page != 'login' %}
   <a href="{% url 'login' %}">Login</a>
 {% endif %}
 <hr />

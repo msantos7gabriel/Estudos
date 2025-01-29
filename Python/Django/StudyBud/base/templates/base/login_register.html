@@ -1,34 +1,34 @@
 {% extends 'main.html' %}
 
 {% block content %}
-  {% comment %}Login{% endcomment %}
-  <div>
-    <form action="{% url 'login' %}" method="POST">
-      {% csrf_token %}
+  {% if page == 'login' %}
+    {% comment %}Login{% endcomment %}
+    <div>
+      <form action="{% url 'login' %}" method="POST">
+        {% csrf_token %}
 
-      <label for="username">Nome de Usuário:</label>
-      <input type="text" name="username" placeholder="Enter Username" />
+        <label for="username">Nome de Usuário:</label>
+        <input type="text" name="username" placeholder="Digite o Nome de Usuário" />
 
-      <label for="password">Senha:</label>
-      <input type="password" name="password" placeholder="Enter Password" />
+        <label for="password">Senha:</label>
+        <input type="password" name="password" placeholder="Digite a Senha" />
 
-      <input type="submit" value="Login" />
-    </form>
-  </div>
+        <input type="submit" value="Login" />
+      </form>
+      <p>Ainda não tem uma conta ?</p>
+      <a href="{% url 'register' %}">Registre-se</a>
+    </div>
+  {% else %}
+    {% comment %}Registrar{% endcomment %}
+    <div>
+      <form action="{% url 'register' %}" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Registrar" />
+      </form>
 
-  {% comment %}Registrar{% endcomment %}
-
-  <div>
-    <form action="{% url 'login' %}" method="POST">
-      {% csrf_token %}
-
-      <label for="username">Nome de Usuário:</label>
-      <input type="text" name="username" placeholder="Enter Username" />
-
-      <label for="password">Senha:</label>
-      <input type="password" name="password" placeholder="Enter Password" />
-
-      <input type="submit" value="Registrar" />
-    </form>
-  </div>
+      <p>Já possui uma conta ?</p>
+      <a href="{% url 'login' %}">Login</a>
+    </div>
+  {% endif %}
 {% endblock %}
