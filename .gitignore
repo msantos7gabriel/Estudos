@@ -4,3 +4,4 @@ Python/Django/.vscode/settings.json
 
 *.exe
 *.json
+/Python/Django/StudyBud/env
