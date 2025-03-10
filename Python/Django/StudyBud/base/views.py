@@ -78,15 +78,17 @@ def home(request):
 
     room_count = rooms.count()
     topic = Topic.objects.all()
+    room_messages = Message.objects.filter(Q(room__topic__name__icontains=q))
 
-    context = {'rooms': rooms, 'topics': topic, 'room_count': room_count}
+    context = {'rooms': rooms, 'topics': topic,
+               'room_count': room_count, 'room_messages': room_messages}
     return render(request, 'base/home.html', context)
 
 
 def room(request, pk):
     room = Room.objects.get(id=pk)
     # serve para acessar a "criança" relacionada a ele
-    room_messages = room.message_set.all().order_by('-created')
+    room_messages = room.message_set.all()
     participants = room.participants.all()
 
     if request.method == 'POST':
@@ -145,6 +147,7 @@ def delete_room(request, pk):
 
     context = {'obj': room}
     return render(request, 'base/delete.html', context)
+
 
 @login_required(login_url='login')
 def delete_message(request, pk):
