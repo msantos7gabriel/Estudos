@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Somando Números</title>
+    <style>
+      body {
+        font: normal 18pt Arial;
+      }
+      input {
+        margin: 10px;
+        font: normal 18pt Arial;
+        width: 100px;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Somando Valores</h1>
+    <label for="txtn1">Primeiro número</label>
+    <input type="number" name="txtn1" id="txtn1" />
+    <br />
+    <label for="txtn2">Segundo número</label>
+    <input type="number" name="txtn2" id="txtn2" />
+    <br />
+    <input type="button" id="btn" value="Somar" />
+    <div class="resultado"></div>
+
+    <script>
+      var txtn1 = document.getElementById("txtn1");
+      var txtn2 = document.getElementById("txtn2");
+      var btn = document.getElementById("btn");
+      var div_result = document.getElementsByClassName("resultado")[0];
+
+      btn.addEventListener("click", soma);
+
+      function soma() {
+        var n1 = Number(txtn1.value);
+        var n2 = Number(txtn2.value);
+
+        div_result.innerHTML = `<p>A soma dos numeros ${n1} e ${n2} é de : ${
+          n1 + n2
+        }</p>`;
+      }
+    </script>
+  </body>
+</html>
