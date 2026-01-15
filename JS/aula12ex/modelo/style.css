@@ -1,0 +1,25 @@
+body {
+  background-color: midnightblue;
+  font: normal 15pt arial;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+}
+
+header {
+}
+
+section {
+  background-color: white;
+  border-radius: 10px;
+  padding: 15px;
+  width: 500px;
+  height: 500px;
+  color: black;
+  box-shadow: rgba(0, 0, 0, 0.3) 5px 5px 10px ;
+}
+footer {
+  font-style: italic;
+}
