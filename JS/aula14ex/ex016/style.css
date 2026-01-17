@@ -1,0 +1,32 @@
+body {
+  background-color: midnightblue;
+  font: normal 15pt arial;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+}
+
+section {
+  background-color: white;
+  border-radius: 10px;
+  padding: 15px;
+  width: 500px;
+  color: black;
+  box-shadow: rgba(0, 0, 0, 0.3) 5px 5px 10px;
+}
+
+section > div > .input_container {
+  margin-top: 20px;
+}
+
+section > #anwser_container {
+  margin-top: 20px;
+  text-align: center;
+}
+
+
+footer {
+  font-style: italic;
+}
