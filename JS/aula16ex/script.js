@@ -1,4 +1,5 @@
 var lista_num = [];
+var resultado = document.getElementById("resultado");
 let add = document
   .getElementById("adicionar")
   .addEventListener("click", adding);
@@ -12,6 +13,7 @@ function adding() {
   let intnum = Number(txtnum.value);
   let select = document.getElementById("lista_numeros");
   let option = document.createElement("option");
+  resultado.innerHTML = "";
 
   if (txtnum.value == "") {
     alert("Valor Invalido: Valor não digitado");
@@ -25,11 +27,11 @@ function adding() {
     option.innerText = `Valor ${intnum} adicionado`;
     select.appendChild(option);
     txtnum.value = "";
+    txtnum.focus();
   }
 }
 
 function ending() {
-  let resultado = document.getElementById("resultado");
   lista_num.sort();
 
   // https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce
