@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Exercício 02</title>
+  </head>
+  <body>
+    <header><h1>Verificardor de idade</h1></header>
+    <section>
+      <div class="form_container">
+        <div class="input_container">
+          <label for="txtage">Ano de Nascimento:</label>
+          <input type="number" name="txtage" id="txtage" min="0" />
+        </div>
+
+        <div class="input_container">
+          <label for="txtsex">Sexo:</label>
+          <label for="sexo"
+            ><input
+              type="radio"
+              name="sexo"
+              id="masc"
+              value="masculino"
+            />Masculino</label
+          >
+
+          <label for="sexo"
+            ><input
+              type="radio"
+              name="sexo"
+              id="fem"
+              value="feminino"
+            />Feminino</label
+          >
+        </div>
+        <div class="input_container">
+          <input
+            id="submit"
+            type="button"
+            value="Verificar"
+           
+          />
+        </div>
+      </div>
+
+      <div id="anwser_container">
+        <p>Prencha os dados acima para ver o resultado</p>
+      </div>
+    </section>
+    <footer><p>® Curso Em Vídeo</p></footer>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,10 @@
+monica = int(input())
+filhos = []
+f1 = int(input())
+f2 = int(input())
+f3 = monica-(f1 + f2)
+filhos.append(f1)
+filhos.append(f2)
+filhos.append(f3)
+filhos.sort(reverse=True)
+print(filhos[0])

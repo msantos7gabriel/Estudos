@@ -1,0 +1,77 @@
+{% load bootstrap3 %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="Aplicação para anotações" />
+    <meta name="keywords" content="anotações, anotação" />
+    <meta name="author" content="Gabriel Montalvão Santos" />
+
+    <title>Learning Log</title>
+
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+
+    <style>
+      .ul-none > ul,
+      .help-block {
+        display: none;
+      }
+      
+      .aviso-error {
+        color: red;
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-default navbar_static-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"></button>
+          <a class="navbar-brand" href="{% url 'index' %}">Learn Logs</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbar">
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="{% url 'topics' %}">Tópicos</a>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            {% if user.is_authenticated %}
+              <li>
+                <a>Olá, {{ user.username }}</a>
+              </li>
+              <li>
+                <a href="{% url 'logout' %}">sair</a>
+              </li>
+            {% else %}
+              <li>
+                <a href="{% url 'register' %}">Registar</a>
+              </li>
+              <li>
+                <a href="{% url 'login' %}">Entrar</a>
+              </li>
+            {% endif %}
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="page-header">
+        {% block header %}
+
+        {% endblock %}
+      </div>
+      <div>
+        {% block content %}
+
+        {% endblock %}
+      </div>
+    </div>
+  </body>
+</html>

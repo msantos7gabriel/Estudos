@@ -1,0 +1,5 @@
+frase = str(input('Escreva uma Frase: ')).strip().upper()
+print("A Frase: {}".format(frase))
+print('Quantidade de Vezes em que \'A\' aparece: {}'.format(frase.count('A')))
+print('Posição em que \'A\' aparece pela primeira vez: {}'.format(frase.find('A')+1))
+print('Posição em que \'A\' aparece pela ultima vez: {}'.format(frase.rfind('A')+1))

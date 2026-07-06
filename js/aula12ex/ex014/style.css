@@ -1,0 +1,31 @@
+body {
+  background-color: midnightblue;
+  font: normal 15pt arial;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+}
+/* 
+header {
+} */
+
+section {
+  background-color: white;
+  border-radius: 10px;
+  padding: 15px;
+  width: 500px;
+  height: 350px;
+  color: black;
+  box-shadow: rgba(0, 0, 0, 0.3) 5px 5px 10px;
+  text-align: center;
+}
+section > div > img {
+  border-radius: 50%;
+  width: 250px;
+  height: 250px;
+}
+footer {
+  font-style: italic;
+}

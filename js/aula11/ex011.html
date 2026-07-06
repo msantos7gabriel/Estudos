@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Verificador de Gringo</title>
+  </head>
+  <label for="pais">Qual seu país ?</label>
+  <input type="text" id="txtpais" />
+  <input type="button" value="Verificar" onclick="verificar()" />
+  <div id="resultado"></div>
+
+  <body>
+    <script>
+      function verificar() {
+        var pais = document.getElementById("txtpais").value.toUpperCase();
+        var res = document.getElementById("resultado");
+
+        res.innerHTML = `<p>Vivendo em ${pais}</p>`;
+
+        if (pais != "BRASIL") {
+          res.innerHTML += "<p>Você é <strong>Gringo</strong></p>";
+        } else {
+          res.innerHTML += "<p>Você é <strong>Brasileiro</strong></p>";
+        }
+      }
+    </script>
+  </body>
+</html>
