@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+  <head>
+    <title>React Basics</title>
+  </head>
+  <body>
+    <div class="js-container"></div>
+    <!-- Biblioteca externa  -->
+    <script src="https://unpkg.com/supersimpledev@3.2.1/external-library.js"></script>
+
+    <!-- React ( Funcionalidades compartilhadas) -->
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <!-- Para desenvolvimento Web -->
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+    <!-- Biblioteca externa (Compilador de JS, Traduz outras linguagens para JS ) -->
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script type="text/babel">
+      var productCost = 10 + 8 * 2;
+      console.log(productCost)
+      // Selecionando o Container do nosso corpo
+      const container = document.querySelector(".js-container");
+      //   Inicializando o React
+      ReactDOM.createRoot(container).render(div);
+    </script>
+  </body>
+</html>

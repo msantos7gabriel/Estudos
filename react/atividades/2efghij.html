@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+  <head>
+    <title>React Basics</title>
+  </head>
+  <body>
+    <div class="js-container"></div>
+    <!-- Biblioteca externa  -->
+    <script src="https://unpkg.com/supersimpledev@3.2.1/external-library.js"></script>
+
+    <!-- React ( Funcionalidades compartilhadas) -->
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <!-- Para desenvolvimento Web -->
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+    <!-- Biblioteca externa (Compilador de JS, Traduz outras linguagens para JS ) -->
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script type="text/babel">
+      function ProductDetails({ name, price, discountPrice, imgscr }) {
+        console.log(imgscr);
+        return (
+          <div>
+            <img src={imgscr} width="50px" />
+            <p>{name}</p>
+
+            {discountPrice == undefined ? (
+              <p>Price: ${Number(price).toFixed(2)}</p>
+            ) : (
+              <>
+                <del>
+                  <p>Price: ${Number(price).toFixed(2)}</p>
+                </del>
+                <p>Discount Price: ${Number(discountPrice).toFixed(2)}</p>
+              </>
+            )}
+
+            <button>Add to Cart</button>
+          </div>
+        );
+      }
+
+      function App() {
+        return (
+          <>
+            <ProductDetails
+              name="Cotton Socks"
+              price="10.9"
+              discountPrice="5.45"
+              imgscr="images/cotton-socks.png"
+            />
+            <ProductDetails
+              name="Tennis balls"
+              price="6"
+              imgscr="images/tennis-balls.png"
+            />
+            <ProductDetails
+              name="Plain T-Shirt"
+              price="7.99"
+              imgscr="images/plain-t-shirt.png"
+            />
+          </>
+        );
+      }
+
+      // Selecionando o Container do nosso corpo
+      const container = document.querySelector(".js-container");
+      //   Inicializando o React
+      ReactDOM.createRoot(container).render(<App />);
+    </script>
+  </body>
+</html>

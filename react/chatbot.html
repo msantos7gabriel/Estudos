@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Chatbot</title>
+  </head>
+
+  <body>
+    <div class="js-container"></div>
+
+    <!-- React ( Funcionalidades compartilhadas) -->
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <!-- Para desenvolvimento Web -->
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+    <!-- Biblioteca externa (Compilador de JS, Traduz outras linguagens para JS ) -->
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script type="text/babel">
+      // Criando um componente ( todo componente deve começar com uma letra maiscula)
+      function ChatInput() {
+        return (
+          <>
+            <input placeholder="Send a massage to Chatbot" size="30" />
+            <button>Send</button>
+          </>
+        );
+      }
+
+      function ChatMessage({ message, sender }) {
+        // const message = props.message;
+        // const {message, sender} = props //( tira as duas variaveis e armazena no seus nomes (desestruturação))
+        /*
+           if (sender === "robot") {
+             return (
+               <div>
+                 <img src="robot.png" alt="user_profile" width="50px" />
+                 {message}
+               </div>
+             );
+           }
+      */
+
+        /*
+           && Guard Operator (como se fosse o ternary)
+           serve como um if dentro do nosso JSX
+           */
+        return (
+          <div>
+            {sender === "robot" && (
+              <img src="robot.png" alt="user_profile" width="50px" />
+            )}
+
+            {message}
+
+            {sender === "user" && (
+              <img src="user.png" alt="user_profile" width="50px" />
+            )}
+          </div>
+        );
+      }
+
+      function App() {
+        return (
+          <>
+            <ChatInput />
+            <ChatMessage message="hello Chatbot" sender="user" />
+            <ChatMessage message="Hello! How can I help you?" sender="robot" />
+            <ChatMessage message="Can you get me todays date?" sender="user" />
+            <ChatMessage message="Today is September 27" sender="robot" />
+          </>
+        );
+      }
+
+      // Selecionando o Container do nosso corpo
+      const container = document.querySelector(".js-container");
+      //   Inicializando o React
+      ReactDOM.createRoot(container).render(<App /z>);
+    </script>
+  </body>
+</html>

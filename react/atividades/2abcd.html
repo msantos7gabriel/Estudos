@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+  <head>
+    <title>React Basics</title>
+  </head>
+  <body>
+    <div class="js-container"></div>
+    <!-- Biblioteca externa  -->
+    <script src="https://unpkg.com/supersimpledev@3.2.1/external-library.js"></script>
+
+    <!-- React ( Funcionalidades compartilhadas) -->
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <!-- Para desenvolvimento Web -->
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+    <!-- Biblioteca externa (Compilador de JS, Traduz outras linguagens para JS ) -->
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script type="text/babel">
+      // JSX = Mesma coisa do JS mas se pode escrever HTML DIRETAMENTE no codigo JS
+      // Usando REACT se usa JSX
+
+      function LoginForm() {
+        return (
+          <>
+            <input type="email" placeholder="email" />
+            <input type="password" placeholder="password" />
+            <p>Hello, Welcome to my website</p>
+            <button>Login</button>
+            <button>Sign up</button>
+          </>
+        );
+      }
+
+      function App() {
+        return <LoginForm />;
+      }
+
+      // Selecionando o Container do nosso corpo
+      const container = document.querySelector(".js-container");
+      //   Inicializando o React
+      ReactDOM.createRoot(container).render(<App />);
+    </script>
+  </body>
+</html>
