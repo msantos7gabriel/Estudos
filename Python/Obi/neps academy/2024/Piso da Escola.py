@@ -1,6 +1,0 @@
-L = int(input())
-C = int(input())
-l = L * C + (L - 1) * (C - 1)
-c = 2 * ((L - 1) + (C - 1))
-print(l)
-print(c)
