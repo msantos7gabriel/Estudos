@@ -1,2 +1,0 @@
-# OpenCV
- Desafio de Rian
